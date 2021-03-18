@@ -1,0 +1,25 @@
+.spuntato {
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+.incarichi ol li {
+  padding: 5px;
+}
+
+.incarichi ol li button {
+  background-color: red;
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+}
+
+#aggiungi {
+  background-color: green;
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+}
