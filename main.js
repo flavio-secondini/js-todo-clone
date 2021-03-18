@@ -1,10 +1,8 @@
 var lista = $("#lista")
-var checkbox = $(".incarichi li input")
-var rimuovi = $(".incarichi li button")
 var aggiungi = $("#aggiungi")
 
 
-checkbox.click(function() {
+$(document).on("click", ".incarichi li input", function() {
   if ($(this).prop("checked") == true) {
     $(this).parent().addClass("spuntato")
   } else {
@@ -12,7 +10,7 @@ checkbox.click(function() {
   }
 })
 
-rimuovi.click(function() {
+$(document).on("click", ".incarichi li button", function () {
   $(this).parent().remove()
 })
 
@@ -21,7 +19,9 @@ aggiungi.click(function() {
   var nuovoCompito = $("#nuovo-compito")
   var template = $(".template li").clone()
 
-  template.prepend(nuovoCompito.val())
-  lista.append(template)
-  nuovoCompito.val("")
+  if (nuovoCompito.val().length > 0) {
+    template.children("span").prepend(nuovoCompito.val())
+    lista.append(template)
+    nuovoCompito.val("")
+  }
 })
